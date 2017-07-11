@@ -44,7 +44,7 @@ public class ClientBean {
     
     public String liste_clients(){
     clients=service.list_clients();
-    return "liste bien remplis";
+    return "clients.xhtml";
     }
     
 }
