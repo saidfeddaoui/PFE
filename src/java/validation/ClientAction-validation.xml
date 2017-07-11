@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<validators>
+    <field name="mail_clt">
+        <field-validator type="requiredstring">
+            <message>Adresse email obligatoire</message>
+        </field-validator>
+        <field-validator type="email">
+            <message>veuillez entrer une adresse email valide</message>
+        </field-validator>
+    </field>
+</validators>

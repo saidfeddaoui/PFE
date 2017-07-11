@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    
+	<class name="model.Client" table="client">
+		<id name="id_clt" column="id_client">
+	        </id>
+		<property name="nom_clt" column="nom_client"></property>
+                <property name="adresse_clt" column="adresse_client"></property>
+                <property name="tel_clt" column="tel"></property>
+                <property name="tel1_clt" column="portable"></property>
+                <property name="fax_clt" column="fax"></property>
+                <property name="ville_clt" column="ville"></property> 
+                <property name="rc_clt" column="rc"></property> 
+                <property name="mail_clt" column="mail"></property>   
+	</class>
+        
+        <class name="model.Devis" table="devis">
+		<id name="ndevis" column="n_devis">
+	        </id>
+		<property name="datedevis" column="dateajout"></property>
+                <property name="repres" column="repres"></property>
+                <property name="depot" column="depot"></property>
+                <property name="observ" column="observ"></property>
+                <many-to-one name="client" class="model.Client" column="id_client" cascade="all" lazy="false"></many-to-one>
+        </class>
+       <!--<class name="Model.Adresse" table="adresse">
+            <id name="id_adresse" column="id_adresse"></id>
+            <property name="adresse" column="adresse"></property>
+            <property name="code_postal" column="code_postal"></property>
+            <property name="ville" column="ville"></property>
+            <property name="pays" column="pays"></property>
+            <property name="type" column="type"></property>
+            <many-to-one name="client" class="Model.Client" column="id_client" cascade="all" lazy="false"></many-to-one>
+        </class>-->
+     
+</hibernate-mapping>

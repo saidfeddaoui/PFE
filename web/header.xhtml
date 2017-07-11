@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+
+   
+ <header class="main-header">
+    <!-- Logo -->
+    <a href="index.php" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>G</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>APEF</b>GEST</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+         
+          <!-- Notifications: style can be found in dropdown.less -->
+       
+          <!-- Tasks: style can be found in dropdown.less -->
+        
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/user-512.png" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">#{authBean.user.profile}</span>
+            </a>
+            <ul class="dropdown-menu"> 
+              <!-- User image -->
+              <li class="user-header">
+                <img src="https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/user-512.png" class="img-circle" alt="User Image"/>
+
+                <p>
+                   - Administrateur de système
+                  <small> Dec. 2016</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+               
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  
+                </div>
+				<div class="pull-left">
+                  <a href="#" id="locksession" class="btn btn-default btn-flat" style ="font-size:13px">Verrouiller <small>( CTLR + espace )</small></a>
+                </div>
+                <div class="pull-right">
+                  <a href="log.php?deco=1" class="btn btn-default btn-flat" style ="font-size:13px">Déconnecter</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    
+    <ui:include src="../head.xhtml"/> 
+    
+    <h:body class="hold-transition skin-blue sidebar-mini">
+        
+    <div class="wrapper">
+    <ui:include src="../header.xhtml"/>
+     <div class="content-wrapper">
+      <ui:include src="../menu.xhtml"/>   
+    <!-- Content Header (Page header) -->
+      <div class="column titrepage"><a href="index.php">page d'accueil</a><span class="navarrow"> > </span>Gestion des clients</div>
+ 
+	<div id="prod-menu">
+	<div style="margin-bottom: 42px;width:300px;margin:auto;margin-top:170px">
+            <a href="client.xhtml" style="padding:15px 20px;background:rgb(77, 169, 204);width:100%;display:block;border-radius:4px;margin:auto;margin-bottom:10px;color:#fff" ><i class="fa fa-plus" aria-hidden="true"></i>   Nouveau client</a> 
+        </div>
+	<div style="width:300px;margin:auto;">
+            <a href="clients.xhtml" style="padding:15px 20px;background:rgb(77, 169, 204);width:100%;display:block;border-radius:4px; margin:auto;margin-bottom:10px;color:#fff" ><i style ="margin-right:5px;" class="fa fa-search" aria-hidden="true"></i>Consulter</a>
+        </div>
+	</div>
+    <!-- /.content -->
+  </div>
+    </div>
+    </h:body>
+    <ui:include src="../footer.xhtml"/>
+</html>
+

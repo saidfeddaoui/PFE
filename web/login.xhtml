@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>COMM-GEST</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"/>
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css"/>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css"/>
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css"/>
+  <link rel="stylesheet" href="asset/css/red.css"/> 
+	<link rel="stylesheet" href="asset/css/animate.css" media="screen" />   
+	<link rel="stylesheet" href="asset/css/style.css" media="screen" />  
+	<link rel="stylesheet" href="asset/css/sweetalert.css" media="screen" />  
+	<link rel="stylesheet" href="asset/css/glb.css" media="screen" /> 
+        <title>Authenetification</title>
+    </h:head>
+    <h:body>
+    <div class="container">    
+        <div id="loginbox" style="margin-top:166px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" style ="border-color:#3c8dbc">
+                    <div class="panel-heading" style ="background:#3c8dbc;color:#fff">
+                        <div class="panel-title"><span class="logo-lg"><b>GEST</b>COMM</span></div>
+                        
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <h:form id="loginform"   class="form-horizontal" role="form">
+                                    
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <h:inputText id="login-username"  class="form-control" value="#{authBean.user.email}"/>                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <h:inputSecret id="login-password"   class="form-control" value="#{authBean.user.mdp}"  />
+                                    </div>
+                                   <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls">
+                                        <h:commandButton type="submit" id="btn-login" action="#{authBean.seConnecter()}" class="btn btn-success" value="Connexion"/>
+                                      </div>
+                                </div>
+    
+                            </h:form>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+    
+    </div>
+    </h:body>
+</html>
+
