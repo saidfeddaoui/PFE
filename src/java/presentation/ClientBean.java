@@ -16,12 +16,35 @@ import service.ServiceImplClient;
  *
  * @author said
  */
-@ManagedBean (name="clientBean")
+@ManagedBean (name="ClientBean")
 @SessionScoped
 public class ClientBean {
     private Client client=new Client();
     private List<Client> clients;
     private IServiceClient service=new ServiceImplClient();
+
+    public ClientBean() {
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
+    }
     
+    public String liste_clients(){
+    clients=service.list_clients();
+    return "liste bien remplis";
+    }
     
 }

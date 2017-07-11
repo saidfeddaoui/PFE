@@ -5,12 +5,81 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    
+    <ui:include src="../head.xhtml"/> 
+    
+    <h:body class="hold-transition skin-blue sidebar-mini">
+        
+    <div class="wrapper">
+    <ui:include src="../header.xhtml"/>
+     <div class="content-wrapper">
+      <ui:include src="../menu.xhtml"/>   
+    <!-- Content Header (Page header) -->
+      <div class="column titrepage"><a href="index.php">Gestion des clients</a><span class="navarrow"> > </span>Liste des clients</div>
+       <div class="row form-group" style="margin: 0;">
+        <f:view>
+            <h:dataTable id="liste_clients" styleClass="table table-hover table-responsive" var="clt" value="#{ClientBean.clients}" summary="List des Client !!">
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Societe nom"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{clt.nom_clt}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Adresse"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{clt.adresse_clt}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Ville"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{clt.ville_clt}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Téléphone"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{clt.tel_clt}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Registre de comerce"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{clt.rc_clt}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Email"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{clt.mail_clt}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Mise a jour"></h:outputText>
+                    </f:facet>
+                    <button type="button" class="tabledit-edit-button btn btn-sm btn-default" style="float: none;">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button type="button" class="tabledit-edit-button btn btn-sm btn-default" style="float: none;">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </h:column>
+            </h:dataTable> 
+        </f:view>
+        </div>		
+	
+    <!-- /.content -->
+  </div>
+    </div>
+    </h:body>
+    <ui:include src="../footer.xhtml"/>
 </html>
+
