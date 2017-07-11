@@ -21,7 +21,11 @@ and open the template in the editor.
       <ui:include src="../menu.xhtml"/>   
     <!-- Content Header (Page header) -->
       <div class="column titrepage"><a href="index.php">Gestion des clients</a><span class="navarrow"> > </span>Liste des clients</div>
-       <div class="row form-group" style="margin: 0;">
+      
+      <div class="row" style="margin: 0px 10px 20px 5px;/* padding-bottom: 20px; */border-bottom: 1px solid #ccc;">
+      <a href="client.xhtml" style="margin: 0px 10px 20px 10px;/* border-bottom: 1px solid #ccc; */" class="btn btn-primary">Nouveau Client</a>
+      </div>
+      <div class="row form-group" style="margin-left: 15px;margin-right:15px;">
         <f:view>
             <h:dataTable id="liste_clients" styleClass="table table-hover table-responsive" var="clt" value="#{ClientBean.clients}" summary="List des Client !!">
                 

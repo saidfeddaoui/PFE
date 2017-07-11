@@ -1,5 +1,6 @@
  $(document).ready(function(){
- $('#liste_client').DataTable();
+     
+ $('#liste_clients').DataTable();
  
  
  $('#mail_clt').attr('placeholder','example@hotmail.com');

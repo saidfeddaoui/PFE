@@ -19,11 +19,11 @@ function reset(){
         $("textarea").val("");
 		}
 $("body").append(" <div id='sessionlocked' class='hold-transition lockscreen lockk' style ='position:fixed;top:0;left:0;width:100%;height:100%;z-index:999999'>   <div class='lockscreen-wrapper'>   <div class='lockscreen-logo'>     <a href='#'><b>APEF</b>GEST</a>   </div>   <!-- User name -->   <div class='lockscreen-name'><?php echo $_SESSION['nomuser'];?></div>    <!-- START LOCK SCREEN ITEM -->   <div class='lockscreen-item'>     <!-- lockscreen image -->     <div class='lockscreen-image'>       <img src='https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/user-512.png' alt='User Image'>     </div>     <!-- /.lockscreen-image -->      <!-- lockscreen credentials (contains the form) -->     <div class='lockscreen-credentials'>       <div class='input-group'>         <input class='form-control' id ='lockiputpass' placeholder='mot de passe' type='password'>          <div class='input-group-btn'>           <button type='button' class='btn' id='lockin'><i class='fa fa-arrow-right text-muted'></i></button>         </div>       </div>     </div>     <!-- /.lockscreen credentials -->    </div>   <!-- /.lockscreen-item -->   <div id ='errorpass' class='help-block text-center' style='color: red;display:none'> Le mot de pass est inccorect  </div> <div class='help-block text-center'>     Entrez votre mot de passe pour récupérer votre session   </div>   <div class='text-center'>     <a href='log.php'>Ou connectez-vous en tant qu'utilisateur différent</a>   </div>   <div class='lockscreen-footer text-center'>     Copyright © 2016 <b><a href='http://apef-education.com'>APEF Education</a>.</b><br>     All rights reserved 	   </div> </div> </div>");
- $('input').iCheck({
+ /*$('input').iCheck({
     
     radioClass: 'iradio_minimal-red',
     increaseArea: '20%' // optional
-  });
+  });*/
    //$(".datestatut").mask("00/00/0000", {placeholder: "__/__/____"});
    $("#retourinput").mask("#");
    $("#telclient").mask("00-00-000-000");
