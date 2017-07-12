@@ -24,7 +24,8 @@ and open the template in the editor.
  
 	<div id="prod-menu">
 	<div style="margin-bottom: 42px;width:300px;margin:auto;margin-top:170px">
-            <a href="client.xhtml" style="padding:15px 20px;background:rgb(77, 169, 204);width:100%;display:block;border-radius:4px;margin:auto;margin-bottom:10px;color:#fff" ><i class="fa fa-plus" aria-hidden="true"></i>   Nouveau client</a> 
+        <!--<a href="client.xhtml"  ><i class="fa fa-plus" aria-hidden="true"></i>   Nouveau client</a>--> 
+        <h:commandButton action="#{ClientBean.liste_clients()}" style="padding:15px 20px;background:rgb(77, 169, 204);width:100%;display:block;border-radius:4px;margin:auto;margin-bottom:10px;color:#fff"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau Client</h:commandButton>
         </div>
 	<div style="width:300px;margin:auto;">
             <a href="#{ClientBean.liste_clients()}" style="padding:15px 20px;background:rgb(77, 169, 204);width:100%;display:block;border-radius:4px; margin:auto;margin-bottom:10px;color:#fff" ><i style ="margin-right:5px;" class="fa fa-search" aria-hidden="true"></i>Consulter</a>

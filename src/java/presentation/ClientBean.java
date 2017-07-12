@@ -20,12 +20,23 @@ import service.ServiceImplClient;
 @SessionScoped
 public class ClientBean {
     private Client client=new Client();
+    private int id;
     private List<Client> clients;
     private IServiceClient service=new ServiceImplClient();
 
     public ClientBean() {
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+    
     public Client getClient() {
         return client;
     }
@@ -45,6 +56,15 @@ public class ClientBean {
     public String liste_clients(){
     clients=service.list_clients();
     return "clients.xhtml";
+    }
+    
+    public String supprimer_client(){
+    boolean result= service.supprimer_client(id);
+    if (result==true){
+    return "";
+    }else{
+    return "clients.xhtml";
+    }
     }
     
 }
