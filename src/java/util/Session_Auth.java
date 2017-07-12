@@ -27,7 +27,7 @@ public class Session_Auth {
 	public static String getUserName() {
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
 				.getExternalContext().getSession(false);
-		return session.getAttribute("user").toString();
+		return session.getAttribute("username").toString();
 	}
 
 	public static String getUserId() {

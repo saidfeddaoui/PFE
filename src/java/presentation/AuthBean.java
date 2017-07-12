@@ -5,8 +5,10 @@
  */
 package presentation;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import model.User;
 import service.Iservice;
@@ -21,7 +23,6 @@ import util.Session_Auth;
 
 @ManagedBean (name="authBean")
 @SessionScoped
-
 
 public class AuthBean {
     
@@ -40,13 +41,20 @@ public class AuthBean {
     }
     
     public String seConnecter(){
-     User u=service.connecter(user.getEmail(), user.getMdp());
-    if(u != null){
+    User u=service.connecter(user.getEmail(), user.getMdp());
+    System.out.println(user.getProfile());
+    if( u != null){
+        user=u;
     HttpSession session = Session_Auth.getSession();
-			session.setAttribute("user", u.getProfile());
+			session.setAttribute("user", user.getProfile());
 			return "index";
     }
     else{
+         FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                    "Login ou mot de passe incorrect ",
+                    "veuillez réessayer !!"));
     return "login";
     }
     }

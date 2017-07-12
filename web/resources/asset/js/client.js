@@ -1,8 +1,8 @@
  $(document).ready(function(){
      
- $('#liste_clients').DataTable();
+ $('.list_table').DataTable();
  
- 
+ $(".form").attr("data-parsley-validate","");
  $('.mail').attr('placeholder','example@hotmail.com');
  $('.mail').attr('required','required');
  $('.mail').attr('data-parsley-required-message', "email obligatoire !!");
@@ -19,55 +19,27 @@
  $('.tel').attr('data-parsley-pattern-message', "le format de téléphone est invalide !!");
  $('.tel').attr('pattern', "(05|06)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{3}[ \.\-]?[0-9]{3}");
  
- $(document).on("click",".supp_client",function(){
-     //alert($(this).attr("data-id"));
+$(document).on("click","#operation_supp",function(){
+   alert("entrer");
+     if(confirm("voulez vous vraiment supprimer ce client ??")){
+     $("#supprimer_client").click();
+    }
      
-     $.ajax({
-            url: "ClientBean.supprimer_client()",
-            type: 'POST',
-            dataType: "json",
-            data: {         operation : "modifier_user",
-							nomuser:nom,
-							prenomuser:prenom,
-							adresseuser:adresse,
-							teluser:tel,
-							emailuser:mail
-				},
-                success: function (json) {
-					//alert(json["message"]);
-					PNotify.prototype.options.styling = "fontawesome";
-                    new PNotify({
-                        title: "Profile",
-					    text: json["message"],
-                        type: 'success'
-                    });
-					 setTimeout(function(){
-                     document.location.href = 'acceuil.php';
-                     }, 2000);
-						
-		}
-		}).fail(function () {
-			alert("fail erreur");
-        });
- });
+});
  });
  
  
  
  
- function supprimer_client(id){
+ function supprimer_client(){
+    if(confirm("voulez vous vraiment supprimer ce client ??")){
+     var client;
+    client=document.getElementById("form_supp_client:supprimer_client");
+    client.click();
+      alert("true");
       
-      if(confirm("voulez vous vraiment supprimer ce client ??")){
-      window.location="supprimer_client.action?id="+id+"";
-      PNotify.prototype.options.styling = "fontawesome";
-      new PNotify({
-      title: "Client",
-      text:"client supprimer avec success !!",
-      type: 'success'
-                    });
-        setTimeout(function(){
-                     document.location.href = 'clients.jsp';
-        }, 4000);
+      }else{
+          alert('test');
       }   
   }
 

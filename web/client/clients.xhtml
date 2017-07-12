@@ -13,8 +13,10 @@ and open the template in the editor.
     
     <ui:include src="../head.xhtml"/> 
     
-    <h:body onload="#{ClientBean.liste_clients()}" class="hold-transition skin-blue sidebar-mini">
-        
+    <h:body  class="hold-transition skin-blue sidebar-mini">
+    <f:event type="preRenderView" listener="#{ClientBean.liste_clients()}" />
+    <h:form>   
+        <!--<h:inputHidden value=""/>-->
     <div class="wrapper">
     <ui:include src="../header.xhtml"/>
      <div class="content-wrapper">
@@ -25,9 +27,13 @@ and open the template in the editor.
       <div class="row" style="margin: 0px 10px 20px 5px;/* padding-bottom: 20px; */border-bottom: 1px solid #ccc;">
       <a href="client.xhtml" style="margin: 0px 10px 20px 10px;/* border-bottom: 1px solid #ccc; */" class="btn btn-primary">Nouveau Client</a>
       </div>
+      <div class="row form-group" style="margin: 0px 10px 20px 5px;">
+          <h:outputLabel value="#{ClientBean.msg_erreur}" styleClass="erreur_msg"/>
+          <h:outputLabel value="#{ClientBean.msg_success}" styleClass="success_msg"/>
+      </div>
       <div class="row form-group" style="margin-left: 15px;margin-right:15px;">
         <f:view>
-            <h:dataTable id="liste_clients" styleClass="table table-hover table-responsive" var="clt" value="#{ClientBean.clients}" summary="List des Client !!">
+            <h:dataTable id="liste_clients" styleClass="table table-hover table-responsive list_table" var="clt" value="#{ClientBean.clients}" summary="List des Client !!">
                 <h:inputHidden id="id_client" value="#{clt.id_clt}"/>
                 <h:column>
                     <f:facet name="header">
@@ -72,7 +78,7 @@ and open the template in the editor.
                     <button type="button" class="tabledit-edit-button btn btn-sm btn-default" style="float: none;">
                         <span class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <button type="button" data-id="#{id=clt.id_clt}" class="tabledit-edit-button btn btn-sm btn-default " style="float: none;">
+                    <button id="supprimer_client"  class="tabledit-edit-button btn btn-sm btn-default" onclick="if(confirm('etes vous sur de vouloir supprimer ce client !!')) return false;" action="#{ClientBean.supprimer_client(clt.id_clt)}" style="float: none;">
                         <span class="glyphicon glyphicon-trash"></span>
                     </button>
                 </h:column>
@@ -83,6 +89,7 @@ and open the template in the editor.
     <!-- /.content -->
   </div>
     </div>
+        </h:form>
     </h:body>
     <ui:include src="../footer.xhtml"/>
 </html>

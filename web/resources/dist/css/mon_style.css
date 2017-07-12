@@ -14,3 +14,14 @@ ul.parsley-errors-list{list-style:none;color:#E74C3C;padding-left:0}
 input.parsley-error,textarea.parsley-error,select.parsley-error{background:#FAEDEC;border:1px solid #E85445}
 .btn-group .parsley-errors-list{display:none}
 .item input,.item textarea{transition:0.42s}
+
+.success_msg{
+    color:green;
+    font-weight: bold;
+    font-size: 13px;
+}
+.erreur_msg{
+    color:red;
+    font-weight: bold;
+    font-size: 13px;
+}

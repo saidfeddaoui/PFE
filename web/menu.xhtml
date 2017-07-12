@@ -10,7 +10,6 @@ and open the template in the editor.
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
- 
     <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -57,7 +56,7 @@ and open the template in the editor.
              
           </a>
           <ul class="treeview-menu">
-              <li><a href="client/i-client.xhtml"><i class="fa fa-user" aria-hidden="true"></i> Fiche client</a></li>
+              <li><a href="#{request.contextPath}/client/i-client.xhtml"><i class="fa fa-user" aria-hidden="true"></i> Fiche client</a></li>
 			 <li><a href="devis.jsp"><i class="fa fa-user" aria-hidden="true"></i> Saisie devis</a></li>
 			<li><a href="g-client.php"><i class="fa fa-user" aria-hidden="true"></i> Situation Des Cclients</a></li>
           </ul>

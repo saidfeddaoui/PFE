@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    
+    <ui:include src="../head.xhtml"/> 
+    
+    <h:body  class="hold-transition skin-blue sidebar-mini">
+        
+    <div class="wrapper">
+    <ui:include src="../header.xhtml"/>
+     <div class="content-wrapper">
+      <ui:include src="../menu.xhtml"/>   
+    <!-- Content Header (Page header) -->
+      <div class="column titrepage"><a href="index.php">Gestion des clients</a><span class="navarrow"> > </span>Modification client</div>
+      
+      <div class="row form-group" style="margin: 0px 10px 20px 5px;">
+          <h:outputLabel value="#{ClientBean.msg_erreur}" styleClass="erreur_msg"/>
+      </div>
+      <div class="row form-group" style="margin-left: 15px;margin-right:15px;">
+          <h:form id="form_client" styleClass="form" style="margin:0px 20px 0px 20px"  >
+ 				<div class="row"><div class="infotitle col-lg-12"><h2>Identification</h2></div></div>
+				<div class="row">
+                                    <h:inputHidden id="id_client" value="#{ClientBean.client.id_clt}"></h:inputHidden>
+				<div class="col-md-6" >
+					<div  class="col-md-12">Raison Social</div>
+					<div class="col-md-12">
+                                           <!-- <input data-parsley-required-message="Raison social obligatoire" required=""  style="text-transform:uppercase;" id="nom_clt" name="client.nom_clt" class="form-control" type ="text"  placeholder="Raison social"></div>-->
+                                           <h:inputText id="nom_clt" styleClass="form-control value" value="#{ClientBean.client.nom_clt}"></h:inputText>
+                                </div>
+				</div>
+                                <div class="row"><div class="infotitle col-lg-12" style="margin-left: 15px;"><h2>Coordonnées</h2></div></div>
+				<div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12">
+                                        <div class="intitle col-lg-12">Téléphone 1</div>
+                                        <div class="col-lg-12">
+                                            <!--<input   class="form-control" id ="tel_clt" name="client.tel_clt" style ="width:100%" type ="text" value="">-->
+                                            <h:inputText value="#{ClientBean.client.tel_clt}" id="tel_clt" styleClass="form-control tel value"></inputText>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12">
+                                        <div class="intitle  col-lg-12">Téléphone 2</div>
+                                        <div class="col-lg-12">
+                                           <!-- <input data-parsley-pattern="^\d{2} \d{2} \d{3} \d{3}$" data-parsley-pattern-message="le format de téléphone est invalide !!" pattern ="(05|06)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{3}[ \.\-]?[0-9]{3}"  class="form-control" id="tel2_clt" name="client.tel1_clt" value="" style ="width:100%" type ="text" >-->
+                                           <h:inputText id="tel1_clt" value="#{ClientBean.client.tel1_clt}" styleClass="form-control tel value"></inputText>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12">
+                                        <div class="intitle  col-lg-12">Fax</div>
+                                        <div class="col-lg-12">
+                                           <!-- <input class="form-control" data-parsley-pattern-message="le format de fax est invalide !!" pattern ="(05|06)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{3}[ \.\-]?[0-9]{3}" id="fax_clt" name="client.fax_clt"  style ="width:100%" type ="text" value="">-->
+                                           <h:inputText id="fax_clt" value="client.fax_clt" styleClass="form-control tel value"></inputText>
+                                        </div>
+                                    </div>
+                                </div>
+				<div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="intitle col-lg-12">Adresse Mail</div>
+                                    <div class="col-lg-12">
+                                        <!--<input data-parsley-type-message="Veuillez entrer une adresse email valide" required="" data-parsley-required-message="email obligatoire" data-parsley-type="email" class="form-control" id="mail" name="client.mail_clt"  style="text-transform:uppercase;width:100%"  type ="text" value="">-->
+                                        <h:inputText id="mail_clt" styleClass="form-control value mail" value="#{ClientBean.client.mail_clt}" required="required" ></inputText>
+                                    </div>
+                                </div>
+				<div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="intitle col-lg-12">RC</div>
+                                    <div class="col-lg-12">
+                                        <!--<input  data-parsley-required-message="RC obligatoire" class="form-control" id="rc_clt" name="client.rc_clt" value=""  style="text-transform:uppercase;width:100%" type ="text">-->
+                                        <h:inputText id="rc_clt" styleClass="form-control" value="#{ClientBean.client.rc_clt}"></inputText>
+                                    </div>
+                                </div>
+				</div>
+				
+				
+				 
+			<div class="row"><div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="infotitle" style="margin-left: 15px;">
+                                    <h2>Informations de facturation et de livraison</h2>
+                                </div></div></div>
+			<div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom:10px">
+			<div class="row">
+                            <div class="intitle col-sm-12 col-md-12 col-lg-12">Adresse</div>
+                            <div class="col-lg-12">
+                                <!--<textarea required="" data-parsley-required-message="Adresse obligatoire"  class="form-control" name="client.adresse_clt" id="adresse_clt" placeholder="tapez votre adresse..."></textarea>-->
+                               <h:inputText id="adresse_clt" styleClass="form-control value" value="#{ClientBean.client.adresse_clt}" required="required" ></inputText>
+                                   </div>
+                        </div>
+			
+			<div class="row">
+                            <div class="intitle col-md-12">Ville</div>
+                            <div id ="loadervid" class="col-lg-12 col-m-12">
+                                <h:selectOneMenu value = "#{ClientBean.client.ville_clt}"> 
+                          <f:selectItem itemValue = "1" itemLabel = "Casablanca" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Rabat" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Fes" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Agadir" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Meknes" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Marrakech" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Kenitra" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "El jadida" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Safi" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Tanger" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Tetouan" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "oujda" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "El houceima" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Taza" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Ouazzane" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Mohammedia" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Benslimane" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Zagoura" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Eddakhla" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Laayoune" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Tantan" /> 
+                          <f:selectItem itemValue = "2" itemLabel = "Tata" /> 
+</h:selectOneMenu> 
+			</div></div>
+			 </div>
+		
+			<div class="row" style ="text-align:right;padding:15px 0px; border-top: 1px #a8a9ad solid;clear: both;">
+			<div class="col-lg-12">
+			
+			
+			<div class="col-lg-12">
+                            <a href="#{ClientBean.liste_clients()}" style="padding:8px 15px;background:rgb(77, 169, 204);color:#fff" ><i style ="margin-right:5px;" class="fa fa-search" aria-hidden="true"></i>Consulter</a>
+                            <button  class="btn btn-default reset" style="padding: 7px 44px;margin-right:15px;">Recommencer</button><h:commandButton id="" action="#{ClientBean.ajouter_client()}"  class="btn btn-default" style="padding: 7px 44px;">Enregistrer</button>
+			</div> 
+			</div> 
+			</div> 
+			 
+			  </form>
+      </div>		
+	
+    <!-- /.content -->
+  </div>
+    </div>
+    </h:body>
+    <ui:include src="../footer.xhtml"/>
+</html>
+
+
